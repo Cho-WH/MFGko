@@ -1,0 +1,158 @@
+/* Nato Sans KR 적용 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    text-align: center;
+    margin-top: 30px;
+    padding: 0 20px; /* 작은 화면에서도 좌우 여백을 줍니다 */
+    box-sizing: border-box; /* 모든 엘리먼트의 박스 크기를 계산할 때 패딩과 테두리를 포함 */
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1000px;
+    flex-wrap: wrap; /* 작은 화면에서 요소가 자동으로 줄바꿈 됩니다 */
+}
+
+.input-section {
+    width: 45%;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 10px; /* 각 섹션 간 여백을 추가합니다 */
+    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+label, input {
+    display: block;
+    margin: 10px 0;
+    width: 100%; /* 입력 필드가 박스 안에서 가득 차도록 만듭니다 */
+    padding: 10px; /* 입력 필드에 패딩을 추가하여 여백을 줍니다 */
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+input {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #3b82f6;
+    outline: none;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #3b82f6, #60a5fa);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    transform: translateY(-3px);
+}
+
+button:disabled {
+    background: #d1d5db;
+    cursor: not-allowed;
+}
+
+h1 {
+    font-size: 36px;
+    color: #111827;
+    font-weight: 900;
+}
+
+h2 {
+    text-align: center;
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700
+}
+
+/* Left Channel 글자 색상 (파랑) */
+.left-channel {
+    color: #3B82F6;
+}
+
+/* Right Channel 글자 색상 (빨강) */
+.right-channel {
+    color: #EF4444;
+}
+
+.controls {
+    margin-top: 20px;
+}
+
+.controls button {
+    margin: 0 10px;
+}
+
+/* 작은 화면에서 반응형 적용 */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* 작은 화면에서는 세로로 나열 */
+        width: 100%;
+        padding: 0 3%; /* 좌우 여백을 최소화 */
+        margin: 0; /* 마진을 제거하여 여백을 최소화 */
+        box-sizing: border-box; /* 패딩이 전체 박스 크기에 포함되도록 설정 */
+    }
+
+    .input-section {
+        width: 100%; /* 섹션이 화면 가득 차도록 */
+        margin: 10px 0; /* 섹션 간 여백 */
+        box-sizing: border-box; /* 섹션 내부 여백 포함 */
+    }
+
+    input {
+        font-size: 16px; /* 작은 화면에서 텍스트 크기를 키웁니다 */
+        box-sizing: border-box; /* 입력 필드의 패딩과 테두리를 너비 계산에 포함 */
+    }
+
+    button {
+        font-size: 18px; /* 버튼도 크기를 키워서 터치하기 쉽게 */
+        box-sizing: border-box; /* 버튼의 패딩도 포함 */
+    }
+}
+
+/* 파형 그리기 */
+#waveformCanvas {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    width: 100%;  /* 캔버스 너비를 부모 요소에 맞춤 */
+    max-width: 600px; /* 큰 화면에서 최대 너비를 600px로 제한 */
+    height: auto;  /* 높이를 비율에 맞게 조정 */
+    max-height: 200px; /* 큰 화면에서 최대 높이를 200px로 제한 */
+}
+
+/* 작은 화면에서 반응형 적용 */
+@media (max-width: 768px) {
+    #waveformCanvas {
+        width: 90%; /* 작은 화면에서는 너비를 90%로 조정하여 너무 크지 않게 */
+        max-width: 400px; /* 작은 화면에서는 최대 너비를 300px로 제한 */
+        max-height: 150px; /* 최대 높이를 150px로 제한 */
+    }
+}
